@@ -41,7 +41,9 @@ class ProdutosController extends Controller
             'preço' => $request->preco,
             'quantidade' => $request->quantidade,
         ]);
-        return 'produto cadastrado com sucesso';
+        
+        return redirect()->route('produtos.index')->with('success','Product created successfully.');
+      
     }
 
     /**
@@ -85,7 +87,7 @@ class ProdutosController extends Controller
             'quantidade'=>$request->quantidade,
         ]);
 
-        return "produto atualizado";
+        return redirect()->route('produtos.index')->with('success','Product created successfully.');
     }
 
     /**
@@ -105,7 +107,7 @@ class ProdutosController extends Controller
         $produto = Produto::findOrFail($id);
         $produto->delete();
 
-        return "Produto excluido";
+        return redirect()->route('produtos.index')->with('success','Product created successfully.');
     }
 }
 
