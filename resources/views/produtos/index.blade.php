@@ -23,11 +23,11 @@
                 <h2>CRUD CARALHO</h2>
             </div>
             <div class=" text-center">
-                <a class="btn btn-success" href="{{ route('produtos.create') }}"> Criar um novo produto</a>
+                <a class="btn btn-success" href="{{ route('produtos.create') }}"> Cadastrar um novo produto</a>
             </div>
         </div>
     </div>
-    <table class="table table-bordered table-dark list-group mb-5" style="margin-top: 20px;margin-inline:270px;">
+    <table class="table table-dark list-group mb-5" style="margin-top: 20px;margin-inline:270px;">
         <caption>Lista de Produtos</caption>
         <tr class="">
             <th width="100px">id-item</th>
@@ -50,12 +50,13 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Deletar</button>
+                   
                 </form>
             </td>
         </tr>
         @endforeach
     </table>
-
+    
 </body>
 
 </html>
