@@ -10,12 +10,29 @@
 </head>
 
 <body>
-    <label for="">Nome do Produto</label>
-    <input type="text" name="nome" value="{{$produto->nome}}"> <br>
-    <label for="">Preço</label>
-    <input type="text" name="preco" value="{{$produto->preço}}"> <br>
-    <label for="">Quantidade</label>
-    <input type="text" name="quantidade" value="{{$produto->quantidade}}"> <br>
+    <div style="margin-inline:300px ; margin-top:50px;">
+        <form action="{{ route('produtos.index') }}">
+            <button class="btn-close" aria-label="Close"></button>
+        </form>
+        <form action="{{ route('produtos.index',['id'=>$produto->id]) }}" method="GET">
+            <div class="container mt-5 px-5">
+                <div class="container  ">
+                    <h1>Visualização de Produto</h1>
+                    <label class=" align-self-center form-label" for="">Nome do Produto</label> <br>
+                    <input type="text" name="nome" class="form-control" value="{{$produto->nome}}" disabled="disabled"> <br>
+                    <label for="" class="form-label">Preço</label> <br>
+                    <input type="text" name="preco" class="form-control" value="{{$produto->preço}}" disabled="disabled"> <br>
+                    <label for="" class="form-label">Quantidade</label> <br>
+                    <input type="text" name="quantidade" class="form-control" value="{{$produto->quantidade}}" disabled="disabled"> <br>
+                </div>
+            </div>
+        </form>
+        <form action="{{ route('produtos.edit',['id'=>$produto->id])}}">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-dark ">Editar Produto</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
